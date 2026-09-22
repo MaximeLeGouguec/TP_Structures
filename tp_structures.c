@@ -69,7 +69,17 @@ Equipement* allouer_parc(int nb_equipements) {
 }
 
 void saisir_parc(Equipement *parc, int nb_equipements) {
-    // TODO: Remplir les champs de chaque équipement avec une boucle
+    for (int i = 0; i < nb_equipements; i++) {
+        printf("\n--- Equipement %d ---\n", i + 1);
+        printf("ID: ");
+        scanf("%d", &parc[i].id);
+        printf("Nom: ");
+        scanf("%s", parc[i].nom);
+        printf("Adresse IP: ");
+        scanf("%s", parc[i].ip);
+        printf("Est actif (1 = Oui, 0 = Non): ");
+        scanf("%d", &parc[i].est_actif);
+    }
 }
 
 void afficher_parc(const Equipement *parc, int nb_equipements) {
