@@ -94,5 +94,6 @@ void afficher_parc(const Equipement *parc, int nb_equipements) {
 }
 
 void changer_etat(Equipement *eq) {
-    // TODO: Modifier la valeur de est_actif en passant par le pointeur
+    eq->est_actif = !eq->est_actif; // Inverse l'état actuel
+    printf("L'etat de l'equipement avec ID %d a ete change a: %s\n", eq->id, eq->est_actif ? "Actif" : "Inactif");
 }
