@@ -83,7 +83,14 @@ void saisir_parc(Equipement *parc, int nb_equipements) {
 }
 
 void afficher_parc(const Equipement *parc, int nb_equipements) {
-    // TODO: Parcourir le tableau et afficher les informations
+    printf("\n--- Parc Reseau ---\n");
+    for (int i = 0; i < nb_equipements; i++) {
+        printf("Equipement %d:\n", i + 1);
+        printf("  ID: %d\n", parc[i].id);
+        printf("  Nom: %s\n", parc[i].nom);
+        printf("  Adresse IP: %s\n", parc[i].ip);
+        printf("  Est actif: %s\n", parc[i].est_actif ? "Oui" : "Non");
+    }
 }
 
 void changer_etat(Equipement *eq) {
