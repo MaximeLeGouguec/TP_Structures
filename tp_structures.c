@@ -26,25 +26,29 @@ int main(void) {
     scanf("%d", &n);
 
     // TODO: Allocation dynamique du parc
-    // mon_parc = allouer_parc(...);
+    mon_parc = allouer_parc(n);
 
     // TODO: Verification du pointeur (NULL ?)
+    if (mon_parc == NULL) {
+        printf("Erreur d'allocation memoire.\n");
+        return 1;
+    }
 
     // TODO: Saisie des equipements
-    // saisir_parc(...);
+    saisir_parc(mon_parc, n);
 
     // TODO: Affichage du parc
-    // afficher_parc(...);
+    afficher_parc(mon_parc, n);
 
     // TODO: Changement d'etat du premier equipement
-    // printf("\nChangement d'etat du premier equipement...\n");
-    // changer_etat(...);
+    printf("\nChangement d'etat du premier equipement...\n");
+    changer_etat(&mon_parc[0]);
 
     // TODO: Re-affichage pour verification
-    // afficher_parc(...);
+    afficher_parc(mon_parc, n);
 
     // TODO: Liberation de la mémoire
-    // free(...);
+    free(mon_parc);
 
     printf("\nMemoire liberee avec succes.\n");
     return 0;
