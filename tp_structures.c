@@ -60,7 +60,12 @@ int main(void) {
 
 Equipement* allouer_parc(int nb_equipements) {
     // TODO: Utiliser malloc et vérifier si l'allocation a réussi
-    return NULL;
+    Equipement *parc = malloc(nb_equipements * sizeof(Equipement));
+    if (parc == NULL) {
+        printf("Erreur d'allocation memoire.\n");
+        return NULL;
+    }
+    return parc;
 }
 
 void saisir_parc(Equipement *parc, int nb_equipements) {
